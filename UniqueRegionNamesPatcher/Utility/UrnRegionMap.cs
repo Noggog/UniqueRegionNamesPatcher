@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace UniqueRegionNamesPatcher.Utility
@@ -129,7 +130,7 @@ namespace UniqueRegionNamesPatcher.Utility
                 }
                 else if (currentHeader != FileHeader.Null)
                 {
-                    streams[currentHeader].Item1.Write(line.ToBytes());
+                    streams[currentHeader].Item1.Write(Encoding.ASCII.GetBytes(line));
                 }
             }
 

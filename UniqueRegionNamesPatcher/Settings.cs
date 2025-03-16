@@ -5,6 +5,7 @@ using Mutagen.Bethesda.WPF.Reflection.Attributes;
 using Noggog;
 using System;
 using System.IO;
+using System.Text;
 
 namespace UniqueRegionNamesPatcher
 {
@@ -45,7 +46,7 @@ namespace UniqueRegionNamesPatcher
             }
             else
             {
-                mapStream = new MemoryStream(Properties.Resources.tamriel_map.ToBytes());
+                mapStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.tamriel_map));
             }
 
             Stream regionStream;
@@ -70,7 +71,7 @@ namespace UniqueRegionNamesPatcher
             }
             else
             {
-                regionStream = new MemoryStream(Properties.Resources.tamriel_region.ToBytes());
+                regionStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.tamriel_region));
             }
 
             return new(mapStream, regionStream, Worldspace.FormKey, ref state);
