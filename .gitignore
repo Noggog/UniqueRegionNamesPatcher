@@ -350,3 +350,5 @@ MigrationBackup/
 */out/*
 /UniqueRegionNamesPatcher/resources/cellmap
 ParseImage/
+
+.idea/.idea.Unique Region Names Patcher/.idea/
